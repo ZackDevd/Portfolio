@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zack | Portfolio</title>
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lora:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Lora', serif;
+      background-color: #fdfcf7;
+      color: #222;
+      line-height: 1.8;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      margin-bottom: 0.5em;
+    }
+
+    h2 {
+      font-size: 1.8em;
+      border-bottom: 2px solid #b89b5e;
+      display: inline-block;
+      padding-bottom: 5px;
+      margin-bottom: 25px;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 100px auto;
+      padding: 0 20px;
+    }
+
+    .divider {
+      border-top: 2px solid #b89b5e;
+      width: 120px;
+      margin: 30px auto;
+    }
+
+    a {
+      color: #b89b5e;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #a28750;
+    }
+
+    /* --- Navbar --- */
+    header {
+      background-color: #fdfcf7;
+      border-bottom: 2px solid #b89b5e;
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6em;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #222;
+    }
+
+    nav a {
+      margin-left: 25px;
+      font-size: 1.05em;
+      font-weight: 500;
+    }
+
+    /* --- Hero Section --- */
+    .hero {
+      text-align: center;
+      padding: 120px 20px 80px;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 3.8em;
+      letter-spacing: 2px;
+      margin-bottom: 0.2em;
+    }
+
+    .hero p {
+      font-size: 1.25em;
+      font-style: italic;
+      color: #444;
+      margin-bottom: 40px;
+    }
+
+    .hero .btn {
+      background-color: #b89b5e;
+      color: white;
+      padding: 12px 30px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 1em;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.3s;
+      box-shadow: 0 4px 8px rgba(184, 155, 94, 0.3);
+    }
+
+    .hero .btn:hover {
+      background-color: #a28750;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(184, 155, 94, 0.4);
+    }
+
+    /* --- Skills --- */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .skill {
+      padding: 8px 20px;
+      border: 1px solid #b89b5e;
+      border-radius: 4px;
+      font-size: 1.05em;
+      transition: background 0.3s, transform 0.3s;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .skill:hover {
+      background-color: #f0ede5;
+      transform: translateY(-2px);
+    }
+
+    /* --- Projects --- */
+    .projects {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: 1fr;
+    }
+
+    .project {
+      border: 1px solid #b89b5e;
+      padding: 20px;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(184, 155, 94, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(184, 155, 94, 0.2);
+    }
+
+    .project h3 {
+      margin-top: 0;
+      font-size: 1.3em;
+      border-bottom: 1px solid #b89b5e;
+      padding-bottom: 5px;
+    }
+
+    @media (min-width: 768px) {
+      .projects {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* --- Experience --- */
+    .timeline {
+      border-left: 2px solid #b89b5e;
+      margin-left: 20px;
+      padding-left: 20px;
+    }
+
+    .timeline-entry {
+      position: relative;
+      margin-bottom: 30px;
+      padding-bottom: 10px;
+    }
+
+    .timeline-entry::before {
+      content: '';
+      position: absolute;
+      left: -29px;
+      top: 5px;
+      width: 15px;
+      height: 15px;
+      background-color: #b89b5e;
+      border-radius: 50%;
+      border: 2px solid #fdfcf7;
+    }
+
+    .timeline-entry span {
+      font-style: italic;
+      color: #555;
+      font-size: 0.9em;
+    }
+
+    /* --- Contact --- */
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #b89b5e;
+      border-radius: 4px;
+      font-family: 'Lora', serif;
+      background: #fffdf9;
+    }
+
+    .contact-form button {
+      background-color: #b89b5e;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 4px;
+      font-family: 'Playfair Display', serif;
+      transition: 0.3s;
+    }
+
+    .contact-form button:hover {
+      background-color: #a28750;
+      transform: translateY(-2px);
+    }
+
+    /* --- Footer --- */
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 2px solid #b89b5e;
+      color: #555;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="navbar">
+      <div class="brand">ZACK</div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>ZACK</h1>
+    <div class="divider"></div>
+    <p>Developer & Designer | Front-End Developer</p>
+    <a href="Zack_CV.pdf" download class="btn">Download CV</a>
+  </section>
+
+  <!-- About -->
+  <section class="section" id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m Zack, a developer who blends timeless design with functional elegance.
+      Inspired by old-money aesthetics, my work emphasizes clarity, structure, and subtle detail.
+    </p>
+  </section>
+
+  <!-- Skills -->
+  <!-- Skills -->
+  <section class="section" id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill">HTML5</div>
+      <div class="skill">CSS3</div>
+      <div class="skill">Java</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">PHP</div>
+      <div class="skill">Python</div>
+      <div class="skill">PowerShell</div>
+      <div class="skill">.NET</div>
+      <div class="skill">Bootstrap</div>
+      <div class="skill">MySQL</div>
+      <div class="skill">MongoDB</div>
+      <div class="skill">Adobe Photoshop</div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="section" id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>Minimal Portfolio</h3>
+        <p>Portfolio with a timeless, document-like layout, emphasizing readability and subtle elegance.</p>
+      </div>
+      <div class="project">
+        <h3>Classic Business Website</h3>
+        <p>Corporate site using structured grids, muted colors, and refined fonts for a luxury consultancy brand.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="section" id="experience">
+    <h2>Experience</h2>
+    <div class="timeline">
+      <div class="timeline-entry">
+        <h3>Frontend Developer</h3>
+        <span>2022 - Present</span>
+        <p>Crafting user interfaces with a focus on simplicity, responsiveness, and visual harmony.</p>
+      </div>
+      <div class="timeline-entry">
+        <h3>Web Designer Intern</h3>
+        <span>2021 - 2022</span>
+        <p>Assisted in creating structured layouts with strong typography and calm design language.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="contact">
+    <h2>Contact</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Zack. All Rights Reserved.
+  </footer>
+
+</body>
+
+</html>
