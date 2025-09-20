@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>Chintan | Portfolio</title>
+
+     <!-- CSS -->
+     <link rel="stylesheet" href="include/style.css" />
+
+     <!-- SEO & OG Tags -->
+     <meta name="description"
+          content="Portfolio of Chintan - Front-End Developer & Designer specializing in timeless, functional, and elegant web experiences." />
+     <meta name="keywords" content="Chintan, Portfolio, Developer, Designer, Web Developer, Frontend" />
+     <meta name="author" content="Chintan" />
+     <meta property="og:title" content="Chintan | Front-End Developer & Designer Portfolio" />
+     <meta property="og:description"
+          content="Explore my projects, skills, and experience in elegant, timeless web design." />
+     <meta property="og:type" content="website" />
+     <meta property="og:url" content="https://chintanKukadiya.com/" />
+     <meta property="og:image" content="https://chintanKukadiya.com/image.jpg" />
+
+     <!-- Favicon -->
+     <link rel="icon" type="image/png" href="images/favicon.png" />
+
+     <!-- Font Awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+     <!-- Google Fonts -->
+     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lora:wght@400;500&display=swap"
+          rel="stylesheet" />
+</head>
+
+<body>
+     <!-- Navbar -->
+     <header>
+          <div class="navbar">
+               <div class="brand">Chintan</div>
+               <nav class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#contact">Contact</a>
+               </nav>
+          </div>
+     </header>
+
+     <!-- Hero Section -->
+     <section class="hero">
+          <h1>Chintan</h1>
+          <div class="divider"></div>
+          <p>Front-End Developer | Designer</p>
+          <a href="chintanKukadiya.pdf" download class="btn">Download CV</a>
+     </section>
+
+     <!-- About Section -->
+     <section class="section" id="about">
+          <h2>About Me</h2>
+          <p>
+               I'm Chintan, a Front-End developer who blends timeless design with
+               functional elegance. My work emphasizes clarity, structure, and subtle
+               details.
+          </p>
+     </section>
+
+     <!-- Skills Section -->
+     <section class="section" id="skills">
+          <h2>Skills</h2>
+          <div class="skills">
+               <div class="skill" data-level="Expert">HTML5</div>
+               <div class="skill" data-level="Expert">CSS3</div>
+               <div class="skill" data-level="Beginner">JavaScript</div>
+               <div class="skill" data-level="Intermediate">Python</div>
+               <div class="skill" data-level="Beginner">Java</div>
+               <div class="skill" data-level="Beginner">PHP</div>
+               <div class="skill" data-level="Intermediate">MySQL</div>
+               <div class="skill" data-level="Beginner">MongoDB</div>
+               <div class="skill" data-level="Intermediate">Adobe Photoshop</div>
+          </div>
+     </section>
+
+     <!-- Projects Section -->
+     <section class="section" id="projects">
+          <h2>Projects</h2>
+          <div class="projects">
+               <div class="project" onclick="openModal('model1')">
+                    <h3>Business Website</h3>
+                    <p>
+                         Corporate site using structured grids, muted colors, and refined
+                         fonts for a luxury consultancy brand.
+                    </p>
+               </div>
+          </div>
+     </section>
+
+     <!-- Project Modal -->
+     <div class="modal" id="model1">
+          <div class="modal-content">
+               <span class="close" onclick="closeModal('model1')">&times;</span>
+               <h2>Business Website</h2>
+               <h3>Tools Used</h3>
+               <p>HTML, CSS, Bootstrap, PHP, MySQL</p>
+               <h3>Role & Impact</h3>
+               <p>
+                    Developed structured layouts with refined color palettes and timeless
+                    design language.
+               </p>
+          </div>
+     </div>
+
+     <!-- Experience Section -->
+     <section class="section" id="experience">
+          <h2>Experience</h2>
+          <div class="timeline">
+               <div class="timeline-entry">
+                    <h3>Web Designer Intern</h3>
+               </div>
+          </div>
+     </section>
+
+     <!-- Contact Section -->
+     <section class="section" id="contact">
+          <h2>Contact</h2>
+
+          <div class="social-links">
+               <a href="https://www.linkedin.com/in/KukadiyaChintan/" target="_blank" rel="noopener">
+                    <i class="fab fa-linkedin"></i>
+               </a>
+               <a href="https://github.com/ZackDevd" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i>
+               </a>
+               <a href="#" target="_blank" rel="noopener">
+                    <i class="fab fa-x-twitter"></i>
+               </a>
+               <a href="#" target="_blank" rel="noopener">
+                    <i class="fab fa-facebook-f"></i>
+               </a>
+          </div>
+     </section>
+
+     <!-- Custom Alert Box -->
+     <div id="custom-alert">
+          <p id="alert-message"></p>
+          <button id="alert-close">OK</button>
+     </div>
+
+     <!-- Footer -->
+     <footer>© 2025 Chintan. All Rights Reserved.</footer>
+
+     <!-- JS -->
+     <script src="include/main.js"></script>
+</body>
+
+</html>

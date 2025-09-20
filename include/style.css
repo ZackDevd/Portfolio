@@ -1,0 +1,506 @@
+/* ======================================
+   Global Styles
+====================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Lora", serif;
+  background-color: #fdfcf7;
+  color: #222;
+  line-height: 1.8;
+}
+
+h1, h2, h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 800;
+  color: #0d0d0d;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+h2 {
+  font-size: 1.9rem;
+  border-bottom: 2px solid #b89b5e;
+  display: inline-block;
+  padding-bottom: 6px;
+  margin-bottom: 28px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+a {
+  color: #013220;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #b89b5e;
+}
+
+/* ======================================
+   Navbar
+====================================== */
+header {
+  background-color: #fdfcf7;
+  border-bottom: 2px solid #b89b5e;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.navbar {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.brand {
+  font-family: "Playfair Display", serif;
+  font-size: 1.6em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #222;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-links a {
+  font-size: 1.05em;
+  font-weight: 500;
+  color: #b89b5e;
+  margin-left: 25px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #a28750;
+  text-decoration: underline;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.8em;
+  cursor: pointer;
+  color: #013220;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #f8f6f1;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    border: 1px solid #d4c4a3;
+    border-radius: 6px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* ======================================
+   Hero Section
+====================================== */
+.hero {
+  text-align: center;
+  padding: 140px 20px 100px;
+}
+
+.hero h1 {
+  font-size: 4.2em;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.hero p {
+  font-size: 1.25em;
+  font-style: italic;
+  color: #444;
+  margin-bottom: 40px;
+}
+
+.hero .btn {
+  background-color: #b89b5e;
+  color: #fff;
+  padding: 12px 32px;
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-size: 1em;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s;
+  box-shadow: 0 4px 8px rgba(184, 155, 94, 0.3);
+}
+
+.hero .btn:hover {
+  background-color: #7a6232;
+  transform: translateY(-2px);
+}
+
+/* ======================================
+   Sections & Dividers
+====================================== */
+.section {
+  max-width: 900px;
+  margin: 100px auto;
+  padding: 0 20px;
+}
+
+.divider {
+  border-top: 2px solid #b89b5e;
+  width: 120px;
+  margin: 30px auto;
+}
+
+/* ======================================
+   Skills Section
+====================================== */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.skill {
+  padding: 8px 18px;
+  border: 1px solid #d4c4a3;
+  border-radius: 20px;
+  font-size: 1.05em;
+  background-color: #fffdf9;
+  transition: background 0.3s, transform 0.3s;
+  position: relative;
+}
+
+.skill::after {
+  content: attr(data-level);
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.85em;
+  color: #555;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.skill:hover {
+  background-color: #f0ede5;
+  transform: translateY(-2px);
+}
+
+.skill:hover::after {
+  opacity: 1;
+}
+
+/* ======================================
+   Projects Section
+====================================== */
+.projects {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: 1fr;
+}
+
+.project {
+  border: 1px solid #d4c4a3;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: #fffdf9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.project:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+.project h3 {
+  margin-top: 0;
+  font-size: 1.3em;
+  border-bottom: 1px solid #b89b5e;
+  padding-bottom: 5px;
+}
+
+@media (min-width: 768px) {
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ======================================
+   Timeline / Experience
+====================================== */
+.timeline {
+  border-left: 1px solid #b89b5e;
+  margin-left: 20px;
+  padding-left: 20px;
+}
+
+.timeline-entry {
+  position: relative;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+}
+
+.timeline-entry::before {
+  content: "";
+  position: absolute;
+  left: -27px;
+  top: 5px;
+  width: 13px;
+  height: 13px;
+  background-color: #f8f6f1;
+  border: 2px solid #b89b5e;
+  border-radius: 50%;
+}
+
+.timeline-entry span {
+  font-style: italic;
+  color: #555;
+  font-size: 0.9em;
+}
+
+/* ======================================
+   Contact Form & Social Links
+====================================== */
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #d4c4a3;
+  border-radius: 4px;
+  font-family: "Cormorant Garamond", serif;
+  background-color: #fffdf9;
+}
+
+.contact-form button {
+  background-color: #b89b5e;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 3px;
+  font-family: "Playfair Display", serif;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #7a6232;
+  transform: translateY(-2px);
+}
+
+/* Social Links */
+.social-links {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  margin: 0 12px;
+  border-radius: 50%;
+  background-color: #fdfcf7;
+  border: 2px solid #b89b5e;
+  color: #b89b5e;
+  font-size: 1.5em;
+  transition: transform 0.3s, background 0.3s, color 0.3s;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  transform: scale(1.2);
+  background-color: #b89b5e;
+  color: #fff;
+}
+
+/* ======================================
+   Footer
+====================================== */
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  border-top: 1px solid #d4c4a3;
+  font-size: 0.85em;
+  font-variant: small-caps;
+  letter-spacing: 2px;
+  color: #555;
+}
+
+/* ======================================
+   Modal
+====================================== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 200;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(20, 20, 20, 0.75);
+  overflow: auto;
+}
+
+.modal-content {
+  background-color: #fffdf9;
+  margin: 80px auto;
+  padding: 25px;
+  border: 1px solid #d4c4a3;
+  border-radius: 6px;
+  max-width: 700px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content h2 {
+  font-family: "Playfair Display", serif;
+  margin-top: 0;
+}
+
+.modal-content img {
+  width: 100%;
+  border-radius: 4px;
+  margin: 15px 0;
+}
+
+.close {
+  color: #333;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #b89b5e;
+}
+
+/* ======================================
+   Custom Alert Box
+====================================== */
+#custom-alert {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fdfcf7;
+  color: #222;
+  border: 2px solid #b89b5e;
+  border-radius: 10px;
+  padding: 25px 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  width: 300px;
+  max-width: 90%;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  animation: fadeIn 0.3s ease;
+}
+
+#custom-alert p {
+  margin-bottom: 20px;
+  font-size: 1em;
+  word-wrap: break-word;
+}
+
+#custom-alert button {
+  background-color: #b89b5e;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  font-family: "Playfair Display", serif;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+#custom-alert button:hover {
+  background-color: #7a6232;
+  transform: translateY(-2px);
+}
+
+/* ======================================
+   Animations
+====================================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ======================================
+   Responsive Adjustments
+====================================== */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2.5em;
+    letter-spacing: 2px;
+  }
+
+  .hero p {
+    font-size: 1em;
+  }
+
+  .projects {
+    gap: 20px;
+  }
+
+  .contact-form button,
+  #custom-alert button {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 0.95em;
+  }
+}
